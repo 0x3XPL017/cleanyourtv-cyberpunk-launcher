@@ -1,0 +1,16 @@
+{
+  "system": "SAMURAI_OS v7.77",
+  "banner": "NIGHT CITY NET",
+  "quotes": [
+    "Wake up, Samurai. We have a city to burn.",
+    "The city always wins. But you can still go out in a blaze of glory.",
+    "A thing of beauty will never fade away.",
+    "Never fade away, never surrender to the corporate matrix."
+  ],
+  "telemetry": {
+    "acid_rain_ph": 3.4,
+    "radiation_msv": 0.12,
+    "net_security": "MAXIMUM",
+    "status": "SYS_ONLINE"
+  }
+}

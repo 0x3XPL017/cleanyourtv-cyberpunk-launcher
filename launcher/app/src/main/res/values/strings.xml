@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SAMURAI_OS</string>
+    <string name="sys_version">SAMURAI_OS v7.77</string>
+    <string name="sys_banner">NIGHT CITY NET</string>
+    <string name="widgets_header">WIDGETS</string>
+    <string name="apps_header">APPS</string>
+    <string name="sys_status_title">SYSTEM STATUS</string>
+    <string name="weather_title">NIGHT CITY WEATHER</string>
+    <string name="now_playing_title">NOW PLAYING</string>
+    <string name="cpu_label">CPU</string>
+    <string name="ram_label">RAM</string>
+    <string name="usage_label">USAGE</string>
+    <string name="hazards_label">⚠️ HAZARDS</string>
+    <string name="load_data_label">LOAD DATA</string>
+    <string name="connect_label">CONNECT</string>
+    <string name="sys_error_label">SYS_ERROR</string>
+    <string name="samurai_brand">SAMURAI</string>
+    <string name="default_track">CHIPPIN\' IN</string>
+    <string name="default_track_info">TRACK INFO</string>
+</resources>

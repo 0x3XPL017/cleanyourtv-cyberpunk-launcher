@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_root"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:clickable="true">
+
+    <!-- Card Background Container -->
+    <RelativeLayout
+        android:id="@+id/card_inner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <!-- Top Header Row: Subtitle + Mini Icon -->
+        <RelativeLayout
+            android:id="@+id/top_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/card_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="NETFLIX //"
+                android:textColor="@color/cyber_text_secondary"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:singleLine="true" />
+
+            <ImageView
+                android:id="@+id/card_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <!-- Big App Title in Center -->
+        <TextView
+            android:id="@+id/card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="NETFLIX"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.04" />
+
+        <!-- Middle Glitch Accent Strip (positioned neatly above telemetry, never overlapping text) -->
+        <FrameLayout
+            android:id="@+id/card_glitch_block"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_above="@id/card_telemetry"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="56dp"
+                android:layout_height="2dp"
+                android:layout_gravity="top|start"
+                android:background="#090B0E" />
+            <View
+                android:layout_width="76dp"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom|end"
+                android:background="#FF1744" />
+        </FrameLayout>
+
+        <!-- Middle Telemetry Text Lines -->
+        <TextView
+            android:id="@+id/card_telemetry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom_row"
+            android:layout_marginBottom="6dp"
+            android:text="[SYS]:: 0038 VERIFIED // ARCH\nSTATUS: RUNNING // PORT 8080"
+            android:textSize="6.5sp"
+            android:lineSpacingExtra="1dp"
+            android:maxLines="2" />
+
+        <!-- Bottom Action Row: LOAD DATA or CONNECT -->
+        <RelativeLayout
+            android:id="@+id/bottom_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/card_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="LOAD DATA"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

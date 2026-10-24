@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="@color/cyber_bg">
+
+    <!-- Left Hazard Border -->
+    <tv.samurai.home.HazardStripeView
+        android:id="@+id/hazard_left"
+        android:layout_width="14dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true" />
+
+    <!-- Right Hazard Border -->
+    <tv.samurai.home.HazardStripeView
+        android:id="@+id/hazard_right"
+        android:layout_width="14dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true" />
+
+    <!-- Left Margin Vertical HUD Telemetry Labels (Centered in the 34dp gutter between 14dp Hazard Border and 48dp Main Content) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="135dp"
+        android:layout_marginStart="-6dp"
+        android:rotation="-90"
+        android:text="NET_LINK // 077"
+        android:textColor="@color/cyber_yellow_muted"
+        android:textSize="7.5sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.16"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="2dp"
+        android:rotation="-90"
+        android:text="SYS_ERROR"
+        android:textColor="@color/cyber_text_red"
+        android:textSize="8.5sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.18"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="125dp"
+        android:layout_marginStart="-6dp"
+        android:rotation="-90"
+        android:text="ICE_SHIELD // ON"
+        android:textColor="@color/cyber_cyan"
+        android:textSize="7.5sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.16"
+        android:singleLine="true" />
+
+    <!-- Right Margin Vertical HUD Telemetry Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="-4dp"
+        android:rotation="90"
+        android:text="NC_GRID // SYNC"
+        android:textColor="@color/cyber_text_muted"
+        android:textSize="7.5sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.16"
+        android:singleLine="true" />
+
+    <!-- Main Content Container (48dp side margins give a generous, clean gap from the vertical side labels) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <!-- ================= TOP HUD HEADER BAR ================= -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_vertical">
+
+            <!-- System Version Top Left -->
+            <TextView
+                android:id="@+id/sys_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="SAMURAI_OS v7.77"
+                android:textColor="@color/cyber_yellow"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <!-- Center Yellow Trapezoid Banner -->
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="32dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_banner_trapezoid"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/banner_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="NIGHT CITY NET"
+                    android:textColor="@color/cyber_text_dark"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1" />
+            </FrameLayout>
+
+            <!-- Top Right HUD Readout: Clock with Milliseconds, Settings Button, Live Wifi Signal Button -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/clock_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24:08:333"
+                    android:textColor="@color/cyber_yellow"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05" />
+
+                <!-- Settings Icon Button (replaces Battery Icon) -->
+                <FrameLayout
+                    android:id="@+id/btn_settings"
+                    android:layout_width="32dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="12dp"
+                    android:padding="4dp"
+                    android:focusable="true"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/settings_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_settings" />
+                </FrameLayout>
+
+                <!-- Dynamic Wi-Fi Signal Button -->
+                <LinearLayout
+                    android:id="@+id/btn_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="6dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:clickable="true">
+
+                    <tv.samurai.home.WifiSignalView
+                        android:id="@+id/wifi_signal_view"
+                        android:layout_width="20dp"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/wifi_ssid_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="WIFI"
+                        android:textColor="@color/cyber_yellow"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:maxWidth="80dp"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Top HUD Micro Telemetry Bar -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:background="#33FFE600" />
+
+        <!-- ================= SECTION 1: WIDGETS ================= -->
+        <TextView
+            android:id="@+id/widgets_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="WIDGETS"
+            android:textColor="@color/cyber_text_primary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12" />
+
+        <LinearLayout
+            android:id="@+id/widgets_container"
+            android:layout_width="match_parent"
+            android:layout_height="186dp"
+            android:layout_marginTop="6dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <!-- 1. SYSTEM STATUS WIDGET (Click to Free RAM) -->
+            <LinearLayout
+                android:id="@+id/widget_system_status"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_widget_panel"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:focusable="true"
+                android:clickable="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="SYSTEM STATUS"
+                        android:textColor="@color/cyber_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <TextView
+                        android:id="@+id/sys_boost_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="[ PURGE RAM ]"
+                        android:textColor="@color/cyber_yellow"
+                        android:textSize="8.5sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <!-- Gauges Row: CPU + RAM -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <tv.samurai.home.CircularGaugeView
+                        android:id="@+id/gauge_cpu"
+                        android:layout_width="106dp"
+                        android:layout_height="106dp"
+                        android:layout_marginEnd="6dp" />
+
+                    <tv.samurai.home.CircularGaugeView
+                        android:id="@+id/gauge_ram"
+                        android:layout_width="106dp"
+                        android:layout_height="106dp"
+                        android:layout_marginStart="6dp" />
+                </LinearLayout>
+
+                <!-- Bottom Telemetry Readout -->
+                <TextView
+                    android:id="@+id/sys_telemetry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="CORES 4 LOAD 0.35"
+                    android:textColor="@color/cyber_text_muted"
+                    android:textSize="9sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- 2. WEATHER WIDGET (Click to Change City) -->
+            <LinearLayout
+                android:id="@+id/widget_weather"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/bg_widget_panel"
+                android:padding="12dp"
+                android:orientation="vertical"
+                android:focusable="true"
+                android:clickable="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="NIGHT CITY WEATHER"
+                        android:textColor="@color/cyber_yellow"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="[ CHANGE CITY ]"
+                        android:textColor="@color/cyber_cyan"
+                        android:textSize="8.5sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/weather_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_weather_acid_rain"
+                        android:layout_marginStart="6dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/weather_city_temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OSLO / --°C"
+                            android:textColor="@color/cyber_text_primary"
+                            android:textSize="14.5sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.04" />
+
+                        <TextView
+                            android:id="@+id/weather_condition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="DIGITAL ACID RAIN"
+                            android:textColor="@color/cyber_cyan"
+                            android:textSize="11sp"
+                            android:letterSpacing="0.04" />
+
+                        <!-- Cyberpunk Atmospheric Telemetry Pill (replaces the old 3 ⚠️⚠️⚠️) -->
+                        <TextView
+                            android:id="@+id/weather_cyber_sub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="#2200E5FF"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:text="WIND 12 KM/H · RAD 0.08 mSv · AIRFLOW OPTIMAL"
+                            android:textColor="@color/cyber_yellow"
+                            android:textSize="8sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Hazards Status Line -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/hazards_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#33FFE600"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="ATMOS // SCAN"
+                        android:textColor="@color/cyber_yellow"
+                        android:textSize="9sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/weather_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="PRECIPITATION: ACIDIC (PH 3.4)"
+                        android:textColor="@color/cyber_text_muted"
+                        android:textSize="9sp"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 3. NOW PLAYING WIDGET (Always active visuals + Media Player Buttons & Music Length Progress Bar) -->
+            <LinearLayout
+                android:id="@+id/widget_now_playing"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_widget_panel"
+                android:padding="12dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical">
+
+                <!-- Header Row: Title + Browse Media Button -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="NOW PLAYING"
+                        android:textColor="@color/cyber_text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <TextView
+                        android:id="@+id/btn_audio_browse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="[ SELECT MEDIA / USB ]"
+                        android:textColor="@color/cyber_red"
+                        android:textSize="8.5sp"
+                        android:textStyle="bold"
+                        android:focusable="true"
+                        android:clickable="true" />
+                </RelativeLayout>
+
+                <!-- Middle Row: Oni Skull + Track Info + Spectrum -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="2dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:scaleType="fitCenter"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/samurai_logo" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SAMURAI"
+                            android:textColor="@color/cyber_text_primary"
+                            android:textSize="8.5sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/track_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CHIPPIN\' IN"
+                            android:textColor="@color/cyber_text_primary"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:letterSpacing="0.04" />
+
+                        <TextView
+                            android:id="@+id/track_artist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SAMURAI // NIGHT CITY FM"
+                            android:textColor="@color/cyber_text_secondary"
+                            android:textSize="9.5sp"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:letterSpacing="0.04" />
+
+                        <tv.samurai.home.AudioSpectrumView
+                            android:id="@+id/audio_spectrum"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Music Length Progress Bar Row -->
+                <LinearLayout
+                    android:id="@+id/audio_seek_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/audio_time_current"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:text="01:18"
+                        android:textColor="@color/cyber_yellow"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/audio_progress_bar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="5dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:max="1000"
+                        android:progress="380"
+                        android:progressTint="@color/cyber_red"
+                        android:progressBackgroundTint="#33FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/audio_time_total"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="03:24"
+                        android:textColor="@color/cyber_text_secondary"
+                        android:textSize="8sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Media Player Transport Buttons Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btn_media_prev"
+                        android:layout_width="34dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="⏮"
+                        android:textColor="@color/cyber_text_primary"
+                        android:textSize="11sp"
+                        android:focusable="true"
+                        android:clickable="true" />
+
+                    <TextView
+                        android:id="@+id/btn_media_play"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:gravity="center"
+                        android:text="⏸"
+                        android:textColor="@color/cyber_yellow"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:focusable="true"
+                        android:clickable="true" />
+
+                    <TextView
+                        android:id="@+id/btn_media_next"
+                        android:layout_width="34dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="⏭"
+                        android:textColor="@color/cyber_text_primary"
+                        android:textSize="11sp"
+                        android:focusable="true"
+                        android:clickable="true" />
+
+                    <TextView
+                        android:id="@+id/audio_status_footer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="PLAYING // SYNTH STREAM"
+                        android:textColor="@color/cyber_green"
+                        android:textSize="7.5sp"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ================= SECTION 2: APPS (Dynamic Multi-Row Grid on Scroll Down) ================= -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/apps_section_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="APPS"
+                android:textColor="@color/cyber_text_primary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.12" />
+
+            <TextView
+                android:id="@+id/apps_manage_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="▼ SCROLL DOWN FOR MORE APPS  ·  HOLD OK TO REORDER"
+                android:textColor="@color/cyber_yellow"
+                android:textSize="8.5sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Row 1: Primary Focused Data Shards (Max 6 per row) -->
+        <LinearLayout
+            android:id="@+id/apps_row"
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:layout_marginTop="6dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:baselineAligned="false" />
+
+        <!-- Secondary Matrix Multi-Row Grid (Hidden on main dashboard; revealed when scrolling down, 6 apps per row) -->
+        <LinearLayout
+            android:id="@+id/secondary_section"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:layout_marginTop="4dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/secondary_section_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SECONDARY MATRIX // 6 SHARDS PER ROW (▲ UP TO MAIN LIST)"
+                android:textColor="@color/cyber_cyan"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+            <ScrollView
+                android:id="@+id/secondary_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/secondary_rows_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="24dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- Bottom Footer with Telemetry and SYS_ERROR QR -->
+        <RelativeLayout
+            android:id="@+id/bottom_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <!-- Bottom Left Telemetry -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:text="DIGITAL ARCHITECTURE v7.77\nKERNEL: CYBER-NET SECURED // NC-NET"
+                android:textColor="@color/cyber_text_muted"
+                android:textSize="8sp" />
+
+            <!-- Bottom Middle Date & Week Telemetry -->
+            <TextView
+                android:id="@+id/footer_date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:text="FRIDAY, 23 OCT 2026 // WEEK 43"
+                android:textColor="@color/cyber_yellow"
+                android:textSize="9.5sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <!-- Bottom Right Error Box with QR Code Simulation -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#22FF1744"
+                    android:gravity="center"
+                    android:text=":::"
+                    android:textColor="@color/cyber_text_red"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="SYS_ERROR"
+                    android:textColor="@color/cyber_text_red"
+                    android:textSize="11.5sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

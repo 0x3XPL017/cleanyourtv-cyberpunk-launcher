@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sec_card_root"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/sec_card_inner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/sec_card_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:text="SHARD //"
+            android:textColor="@color/cyber_text_secondary"
+            android:textSize="7.5sp"
+            android:textStyle="bold"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/sec_card_icon"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/sec_card_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="APP NAME"
+            android:textColor="@color/cyber_cyan"
+            android:textSize="11.5sp"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/sec_card_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="OPEN // ▲ PROMOTE"
+            android:textColor="@color/cyber_text_muted"
+            android:textSize="7sp"
+            android:textStyle="bold"
+            android:singleLine="true" />
+    </RelativeLayout>
+</FrameLayout>
