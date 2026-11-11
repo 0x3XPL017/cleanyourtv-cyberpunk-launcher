@@ -1,0 +1,19 @@
+# Built files & caches
+.gradle/
+build/
+*/build/
+local.properties
+*.apk
+
+# Device runtime state & user backups
+state/
+tools/tv.conf
+tools/__pycache__/
+toolchain
+platform-tools/
+
+# IDE & OS metadata
+.DS_Store
+.idea/
+*.iml
+*.log

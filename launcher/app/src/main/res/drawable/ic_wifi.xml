@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="16dp"
+    android:viewportWidth="20"
+    android:viewportHeight="16">
+    <!-- Stepped Signal Strength Bars -->
+    <path
+        android:fillColor="#FFE600"
+        android:pathData="M2,12 L5,12 L5,16 L2,16 Z M7,9 L10,9 L10,16 L7,16 Z M12,6 L15,6 L15,16 L12,16 Z M17,2 L20,2 L20,16 L17,16 Z" />
+</vector>

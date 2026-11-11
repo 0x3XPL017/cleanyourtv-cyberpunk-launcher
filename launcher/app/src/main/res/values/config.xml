@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TV System & Location Config -->
+    <string name="weather_city_label" translatable="false">OSLO</string>
+    <string name="weather_lat" translatable="false">59.9139</string>
+    <string name="weather_lng" translatable="false">10.7522</string>
+    <string name="weather_units" translatable="false">celsius</string>
+    <bool name="weather_cyber_flavor">true</bool>
+
+    <!-- Dock Apps (left to right, matching the 6 Data Shard slots) -->
+    <string-array name="dock_packages" translatable="false">
+        <item>com.google.android.youtube.tv</item>
+        <item>com.netflix.ninja</item>
+        <item>com.amazon.amazonvideo.livingroom</item>
+        <item>com.plexapp.android</item>
+        <item>com.android.chrome</item>
+        <item>com.android.tv.settings</item>
+    </string-array>
+
+    <string-array name="dock_labels" translatable="false">
+        <item>YOUTUBE // DATA_SHARD</item>
+        <item>NETFLIX //</item>
+        <item>PRIME VIDEO //</item>
+        <item>PLEX //</item>
+        <item>BROWSER //</item>
+        <item>SETTINGS //</item>
+    </string-array>
+
+    <string-array name="dock_actions" translatable="false">
+        <item>LOAD DATA</item>
+        <item>LOAD DATA</item>
+        <item>LOAD DATA</item>
+        <item>CONNECT</item>
+        <item>CONNECT</item>
+        <item>LOAD DATA</item>
+    </string-array>
+</resources>
