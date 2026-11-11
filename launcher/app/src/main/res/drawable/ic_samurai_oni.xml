@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Cyberpunk Samurai Oni Skull Mask -->
+    <!-- Horns and crest -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M50,4 L59,20 L68,6 L66,24 L78,16 L71,32 L88,26 L76,42 L94,40 L79,52 L96,62 L78,66 L90,82 L70,76 L66,94 L50,84 L34,94 L30,76 L10,82 L22,66 L4,62 L21,52 L6,40 L24,42 L12,26 L29,32 L22,16 L34,24 L32,6 L41,20 Z" />
+    <!-- Inner Dark Face Carve -->
+    <path
+        android:fillColor="#090B0E"
+        android:pathData="M50,18 L64,34 L62,56 L50,72 L38,56 L36,34 Z" />
+    <!-- Fierce Glowing Eyes -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M42,42 L48,46 L42,48 L37,45 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M58,42 L63,45 L58,48 L52,46 Z" />
+    <!-- Oni Fangs / Teeth -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M44,58 L46,65 L48,58 L50,66 L52,58 L54,65 L56,58 L58,66 L60,58 L50,60 Z" />
+</vector>
